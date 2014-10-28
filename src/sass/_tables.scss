@@ -1,0 +1,49 @@
+table {
+    background: $color-table-bg;
+    border: 1px solid $color-table-border;
+    border-bottom: 0;
+    margin: 24px 0;
+    width: 100%;
+
+    caption {
+        @include set-type(18, 24);
+        margin-top: 0;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    thead {
+        th {
+            @include set-type(18, 24);
+            background: $color-table-heading-bg;
+            color: $color-table-heading;
+            margin: 0;
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid $color-table-border;
+        margin: 0;
+        padding: 0;
+    }
+
+    th[scope="row"] {
+        text-align: right;
+    }
+
+    th, th[scope="row"], td {
+        margin: 0;
+        padding: 0 6px;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background: $color-table-alt-row;
+        }
+    }
+
+    .percent,
+    .currency {
+        text-align: right;
+    }
+}

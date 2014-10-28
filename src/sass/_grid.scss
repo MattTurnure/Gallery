@@ -1,0 +1,191 @@
+$total-width     : 984;
+$gutter          : 24;
+$grid-breakpoint : 48em;
+
+%clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin column($count: 1, $g: $gutter) {
+    $offset: $count - 1;
+    $total-offset: $offset * $g;
+    $adjusted-total-width: $total-width - $total-offset;
+    $col-width: $adjusted-total-width / $count;
+    margin-right: percentage($g/$total-width);
+    width: percentage($col-width/$total-width);
+}
+
+@mixin ratio($col-a-width: 50%, $col-b-width: 50%, $float-dir: left) {
+    $percentage: percentage(10/$total-width);
+    $margin-a: 0 $percentage 0 0;
+    $margin-b: 0 0 0 $percentage;
+
+    @if $float-dir == 'right' {
+        $margin-a: 0 0 0 $percentage;
+        $margin-b: 0 $percentage 0 0;
+    }
+
+    .block {
+        float: $float-dir;
+        position: relative;
+    }
+
+    .block:first-child {
+        width: $col-a-width - $percentage;
+        margin: $margin-a;
+        padding-right: 24px;
+    }
+
+    .block:last-child {
+        width: $col-b-width - $percentage;
+        margin: $margin-b;
+    }
+}
+
+.header-main,
+.content-main,
+.content-secondary,
+.footer-main {
+    min-width: 17.5em;
+    overflow: hidden;
+}
+
+.group {
+    @extend %clearfix;
+    max-width: $total-width + px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+
+    .row {
+        @extend %clearfix;
+        list-style: none;
+        padding: 0;
+    }
+
+    @media all and (min-width: $grid-breakpoint) {
+        .col {
+            float: left;
+            @include column(12);
+        }
+
+        .col:last-child {
+            margin-right: 0;
+        }
+
+        .half {
+            .col {
+                @include column(2);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+
+        .one-two {
+            @include ratio(33.3333%, 66.6666%);
+        }
+
+        .two-one {
+            @include ratio(66.6666%, 33.3333%, left);
+        }
+
+        .three {
+            .col {
+                @include column(3);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+
+        .four {
+            .col {
+                @include column(4);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(4n+4) {
+                margin-right: 0;
+            }
+        }
+
+        .five {
+            .col {
+                @include column(5);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(5n+5) {
+                margin-right: 0;
+            }
+        }
+
+        .six {
+            .col {
+                @include column(6);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(6n+6) {
+                margin-right: 0;
+            }
+        }
+
+        .eight {
+            .col {
+                @include column(8);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(8n+8) {
+                margin-right: 0;
+            }
+        }
+
+        .ten {
+            .col {
+                @include column(10);
+            }
+
+            .col:first-child {
+                margin-left: 0;
+            }
+
+            .col:nth-child(10n+10) {
+                margin-right: 0;
+            }
+        }
+    }
+}

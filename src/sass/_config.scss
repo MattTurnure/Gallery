@@ -1,0 +1,46 @@
+/*--------------------------------------------*
+ * Typography
+ *--------------------------------------------*/
+$type-main    : "Georgia", "Times New Roman", serif;
+$type-heading : Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+
+/*--------------------------------------------*
+ * Layout
+ *--------------------------------------------*/
+
+$breakpoint-one: 40em;
+$breakpoint-two: 60em;
+
+/*--------------------------------------------*
+ * Color
+ *--------------------------------------------*/
+
+// General
+$color-bright           : rgb(255,255,255);
+$color-bright-trans     : rgba(255,255,255,0.85);
+$color-black            : rgb(0,0,0);
+$color-dark             : rgb(51,51,51);
+$color-neutral          : rgb(102,102,102);
+$color-light            : rgb(200,200,200);
+$color-bg               : rgb(255,255,255);
+$color-error            : #cc0000;
+
+// Components
+$color-link             : rgb(0,177,201);
+$color-link-hover       : rgba(0,177,201,0.75);
+$color-table-heading-bg : rgb(51,51,51);
+$color-table-heading    : rgb(255,255,255);
+$color-table-bg         : rgb(255,255,255);
+$color-table-border     : rgb(102,102,102);
+$color-table-alt-row    : rgb(240,240,240);
+
+// Form colors
+$color-btn-bg       : $color-link;
+$color-btn-bg-hover : $color-link-hover;
+$color-btn-text     : $color-bright;
+
+$color-btn-bg-secondary : $color-neutral;
+$color-btn-bg-secondary-hover : $color-neutral;
+
+$color-btn-bg-tertiary : $color-neutral;
+$color-btn-bg-tertiary-hover : $color-neutral;

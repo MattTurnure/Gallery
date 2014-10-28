@@ -1,0 +1,98 @@
+%clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    @include set-relative-type;
+    font-family: $type-main;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+
+    @media all and (min-width: $breakpoint-one) {
+        &:after {
+            content: 'tablet';
+            display: none;
+        }
+    }
+
+    @media all and (min-width: $breakpoint-two) {
+        &:after {
+            content: 'widescreen';
+            display: none;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $type-heading;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+    height: auto !important;
+}
+
+iframe {
+    border: 0;
+}
+
+.object {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.hidden {
+    position: absolute;
+    left: -9999em;
+}
+
+.side-by-side {
+    @extend %clearfix;
+
+    .side {
+        float: left;
+    }
+
+    .btn {
+        margin-left: -1px;
+    }
+}
+
+hr {
+    background: $color-dark;
+    border: 0;
+    height: 1px;
+    margin: -1px 0 0;
+    padding: 0;
+    width: 100%;
+}

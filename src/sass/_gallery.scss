@@ -1,0 +1,110 @@
+.group {
+	.gallery {
+		position: relative;
+		margin-top: 48px;
+		@media screen and (min-width: $breakpoint-one) {
+			.block:first-child,
+			.block:last-child {
+				margin: 0;
+			}
+
+			.next-btn {
+				right: 24px;
+			}
+		}
+	}
+}
+
+.gallery {
+	figure {
+		position: relative;
+	}
+}
+
+.next-btn,
+.prev-btn {
+	@extend a;
+	cursor: pointer;
+	position: absolute;
+	top: -24px;
+}
+
+.prev-btn {
+	left: 0;
+}
+
+.next-btn {
+	right: 0;
+}
+
+.gallery-entries {
+	@extend %scrub-list-style;
+	@extend %clearfix;
+	text-align: center;
+
+	li {
+		margin: 24px 0;
+
+		@media screen and (min-width: $breakpoint-one) {
+			display: inline-block;
+			margin: 24px 8px;
+			width: 240px;
+		}
+	}
+}
+
+.related-galleries {
+	@extend %scrub-list-style;
+
+	li {
+		margin-bottom: 24px;
+	}
+
+	a {
+		border: 1px solid $color-light;
+		display: block;
+		padding: 0 24px 24px;
+
+		&:hover,
+		&:focus {
+			opacity: 0.85;
+		}
+	}
+
+	.fig-caption {
+		@include set-type(14, 24);
+		margin-bottom: 0;
+	}
+}
+
+.gallery-thumbs {
+	@extend %scrub-list-style;
+	@extend %clearfix;
+	margin: 24px 0;
+	text-align: center;
+
+	li {
+		background: $color-link;
+		display: inline-block;
+		margin: 0 6px;
+	}
+
+	a {
+		border: 0;
+		display: block;
+
+		&:hover,
+		&:focus {
+			opacity: 0.85;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-one) {
+		margin: 0;
+
+		li {
+			float: left;
+			display: block;
+		}
+	}
+}

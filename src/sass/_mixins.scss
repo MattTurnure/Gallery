@@ -1,0 +1,106 @@
+$browser-context : 16;
+$baseline: 24;
+
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+
+@function baseline-x($multiple: 1, $x: $baseline) {
+    @return #{$multiple * $x};
+}
+
+@mixin set-type($font-size: 16, $line-height: 16, $margin: $baseline + px 0) {
+    font-size: $font-size + px;
+    font-size: rem($font-size);
+    line-height: $line-height/$font-size;
+    margin: $baseline + px 0;
+}
+
+@mixin set-relative-type() {
+    h1 {
+        @include set-type(36, 48);
+    }
+
+    h2 {
+        @include set-type(24, 24);
+    }
+
+    h3 {
+        @include set-type(20, 24);
+    }
+
+    h4 {
+        @include set-type(18, 24);
+    }
+
+    h5, h6, p, ul, ol, dl, td, th {
+        @include set-type(16, 24);
+    }
+
+    @media all and (min-width: $breakpoint-one) {
+        h1 {
+            @include set-type(48, 48);
+        }
+
+        h2 {
+            @include set-type(36, 24);
+        }
+
+        h3 {
+            @include set-type(24, 24);
+        }
+
+        h4 {
+            @include set-type(18, 24);
+        }
+
+        h5, h6, p, ul, ol, dl, td, th[scope="row"] {
+            @include set-type(14, 24);
+        }
+    }
+
+    @media all and (min-width: $breakpoint-two) {
+        h1 {
+            @include set-type(48, 48);
+        }
+
+        h2 {
+            @include set-type(36, 48);
+        }
+
+        h3 {
+            @include set-type(32, 48);
+        }
+
+        h4 {
+            @include set-type(24, 24);
+        }
+
+        h5, th {
+            @include set-type(18, 24);
+        }
+
+        h6, p, ul, ol, dl, td, th[scope="row"] {
+            @include set-type(14, 24);
+        }
+    }
+}
+
+%scrub-list-style {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+%hidden {
+    position: absolute;
+    top: -9999em;
+}
+
+@mixin horizontal {
+    text-align: center;
+
+    li {
+        display: inline-block;
+    }
+}

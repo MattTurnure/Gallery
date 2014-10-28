@@ -1,0 +1,124 @@
+form {
+    legend {
+        @extend h3;
+
+        + ul,
+        + ol {
+            margin-top: 0;
+
+            > li {
+                margin-top: 0
+            }
+        }
+    }
+
+    ol, ul {
+        @extend %scrub-list-style;
+    }
+
+    li {
+        margin: 24px 0;
+    }
+
+    label {
+        @include set-type(16, 24);
+        font-family: $type-heading;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    textarea {
+        @include set-type(16, 24);
+        border: 1px solid;
+        margin: 0;
+        padding: 11px;
+        width: 100%;
+    }
+
+    select {
+        @include set-type(16, 24);
+        margin: 0;
+        width: 100%;
+    }
+
+    .input-label {
+        @extend label;
+        margin-bottom: 0;
+    }
+
+    @media all and (min-width: $breakpoint-one) {
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="search"],
+        textarea {
+            @include set-type(14, 24);
+            margin: 0;
+        }
+    }
+
+    .error-inline {
+        color: $color-error;
+        font-style: italic;
+        margin-top: 0;
+    }
+}
+
+.check-radio {
+    ul {
+        margin-top: 0;
+    }
+
+    li {
+        margin: 0;
+    }
+
+    .label {
+        font-weight: 400;
+        padding-left: 12px;
+    }
+}
+
+.btn, .btn-secondary, .btn-tertiary {
+    @include set-type(16, 24);
+    border: 0;
+    display: inline-block;
+    margin: 0 0 24px;
+    padding: 12px 36px;
+    text-align: center;
+    width: 100%;
+}
+
+.btn {
+    background: $color-btn-bg;
+    color: $color-btn-text;
+
+    &:hover,
+    &:focus {
+        background: $color-btn-bg-hover;
+    }
+}
+
+.btn-secondary {
+    background: $color-btn-bg-secondary;
+    color: $color-btn-text;
+
+    &:hover,
+    &:focus {
+        background: $color-btn-bg-secondary-hover;
+    }
+}
+
+.btn-tertiary {
+    background: $color-btn-bg-tertiary;
+    color: $color-btn-text;
+
+    &:hover,
+    &:focus {
+        background: $color-btn-bg-tertiary-hover;
+    }
+}

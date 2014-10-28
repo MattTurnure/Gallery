@@ -1,0 +1,24 @@
+{
+  "name": "Gallery",
+  "version": "0.0.1",
+  "authors": [
+    "MattTurnure <matt@mattturnure.com>"
+  ],
+  "description": "Grunt Boilerplate",
+  "main": "index.html",
+  "keywords": [
+    "grunt",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "homepage": "http://mattturnure.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dist/js/vendor",
+    "test",
+    "tests"
+  ]
+}

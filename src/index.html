@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Gallery</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/styles/main.css">
+    </head>
+    <body>
+        <section class="content-main">
+		    <div class="group">
+		    	<h1>Gallery</h1>
+
+	    		<div class="row two-one gallery">
+	    			<main class="block main">
+	    				<figure class="focal">
+							<img id="focal"
+							     src="/img/01.jpg"
+							     alt=""
+							     data-caption="01"
+							     data-img="/img/01.jpg"
+							     data-img-thumb="/img/thumbs/01.jpg"
+							     data-index="0"
+							     data-count="1">
+
+							<figcaption>
+								<p id="caption">01</p>
+							</figcaption>
+
+						</figure><!-- /.focal -->
+	    			</main><!-- /.block -->
+
+	    			<aside class="block aside">
+	    				<ul class="gallery-thumbs" id="gallery-thumbs">
+							<li><a href="/img/01.jpg" data-caption="01" data-img="/img/01.jpg" data-img-thumb="/img/thumbs/01.jpg" data-count="01" data-page="1"><img src="/img/thumbs/01.jpg" alt=""></a></li>
+							<li><a href="/img/02.jpg" data-caption="02" data-img="/img/02.jpg" data-img-thumb="/img/thumbs/02.jpg" data-count="02" data-page="1"><img src="/img/thumbs/02.jpg" alt=""></a></li>
+							<li><a href="/img/03.jpg" data-caption="03" data-img="/img/03.jpg" data-img-thumb="/img/thumbs/03.jpg" data-count="03" data-page="1"><img src="/img/thumbs/03.jpg" alt=""></a></li>
+							<li><a href="/img/04.jpg" data-caption="04" data-img="/img/04.jpg" data-img-thumb="/img/thumbs/04.jpg" data-count="04" data-page="1"><img src="/img/thumbs/04.jpg" alt=""></a></li>
+							<li><a href="/img/05.jpg" data-caption="05" data-img="/img/05.jpg" data-img-thumb="/img/thumbs/05.jpg" data-count="05" data-page="1"><img src="/img/thumbs/05.jpg" alt=""></a></li>
+							<li><a href="/img/06.jpg" data-caption="06" data-img="/img/06.jpg" data-img-thumb="/img/thumbs/06.jpg" data-count="06" data-page="1"><img src="/img/thumbs/06.jpg" alt=""></a></li>
+							<li><a href="/img/07.jpg" data-caption="07" data-img="/img/07.jpg" data-img-thumb="/img/thumbs/07.jpg" data-count="07" data-page="1"><img src="/img/thumbs/07.jpg" alt=""></a></li>
+							<li><a href="/img/08.jpg" data-caption="08" data-img="/img/08.jpg" data-img-thumb="/img/thumbs/08.jpg" data-count="08" data-page="1"><img src="/img/thumbs/08.jpg" alt=""></a></li>
+							<li><a href="/img/09.jpg" data-caption="09" data-img="/img/09.jpg" data-img-thumb="/img/thumbs/09.jpg" data-count="09" data-page="1"><img src="/img/thumbs/09.jpg" alt=""></a></li>
+							<li><a href="/img/10.jpg" data-caption="10" data-img="/img/10.jpg" data-img-thumb="/img/thumbs/10.jpg" data-count="10" data-page="1"><img src="/img/thumbs/10.jpg" alt=""></a></li>
+		    			</ul>
+		    		</aside><!-- /.block -->
+	    		</div><!-- /.row -->
+				
+		    </div><!-- /.group -->
+		</section><!-- /.content-main -->
+
+		<script src="/js/scripts.dev.js"></script>
+		<script>
+			var gal = new Gallery('focal', 'caption', 'gallery-thumbs');
+
+			function addHTML(num) {
+				var html = '', i = 1, count = 1;
+
+				for (; i <= num; i++) {
+					count = i < 10 ? '0' + i : i;
+					html += '<li><a href="/img/' + count + '.jpg" data-caption="' + count + '" data-img="/img/' + count + '.jpg" data-img-thumb="/img/thumbs/' + count + '.jpg" data-count="' + count + '" data-page="1"><img src="/img/thumbs/' + count + '.jpg" alt=""></a></li>';
+				}
+
+				return html;
+			}
+		</script>
+    </body>
+</html>

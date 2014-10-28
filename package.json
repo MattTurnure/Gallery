@@ -1,0 +1,33 @@
+{
+  "name": "Gallery",
+  "version": "0.0.1",
+  "description": "Simple image gallery",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattTurnure/Gallery.git"
+  },
+  "keywords": [
+    "gallery",
+    "JavaScript"
+  ],
+  "author": "Matt Turnure",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MattTurnure/Gallery/issues"
+  },
+  "homepage": "https://github.com/MattTurnure/Gallery",
+  "devDependencies": {
+    "compression": "^1.2.0",
+    "express": "^4.10.0",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-imagemin": "^0.9.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-includes": "^0.4.5"
+  }
+}
